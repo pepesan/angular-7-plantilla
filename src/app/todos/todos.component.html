@@ -1,0 +1,14 @@
+<h2>Precio: {{precio | currency : '€'}}</h2>
+<h2>Fecha: {{fecha | date }}</h2>
+<h4>Añadir tarea</h4>
+<form (submit)="addTodo()" >
+  <input type="text" [(ngModel)]="todo.text"
+         [ngModelOptions]="{standalone: true}"/>
+</form>
+<h3>Listado de tareas</h3>
+<h4 *ngIf="todos.length==0">No hay datos</h4>
+<ul>
+  <li *ngFor="let item of todos">
+    {{item.text}}<button (click)="deleteTodo(item.text)" >Borrar</button>
+  </li>
+</ul>
