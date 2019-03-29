@@ -1,0 +1,10 @@
+<h3>Listado de libros</h3>
+<p>
+  <button (click)="actualiza()">Actualizar</button>
+</p>
+<ul>
+  <li *ngFor="let resultado of libros">
+    {{resultado.titulo}}: {{resultado.autor}} {{resultado.isbn}}
+    <button (click)="borra(resultado._id)">Borra</button>
+  </li>
+</ul>

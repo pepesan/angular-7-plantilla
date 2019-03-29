@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {TodoService} from '../../services/todo.service';
 
 @Component({
   selector: 'app-todos',
@@ -10,16 +11,14 @@ export class TodosComponent implements OnInit {
   todo: any;
   precio;
   fecha;
-  constructor() { }
+  partidos;
+  constructor(private todoService: TodoService) { }
   ngOnInit() {
-    this.fecha = new Date();
-    this.precio = 32.5;
-    this.todo = {
-      text: ''
-    };
-    this.todos = new Array();
-    this.todos.push({text: 'hacer la compra'});
-    this.todos.push({text: 'revisar el coche'});
+    this.partidos = this.todoService.getData();
+    this.fecha = this.todoService.getFecha();
+    this.precio = this.todoService.getPrecio();
+    this.todo = this.todoService.getTodo();
+    this.todos = this.todoService.getListado();
   }
 
   addTodo() {

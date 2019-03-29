@@ -12,3 +12,12 @@
     {{item.text}}<button (click)="deleteTodo(item.text)" >Borrar</button>
   </li>
 </ul>
+<h3>Listado de partidos</h3>
+<ul>
+  <li *ngFor="let resultado of partidos | async">
+    {{resultado.nombre}}: {{resultado.dipu}} <img src="http://
+cursosdedesarrollo.com/pactometro/img/{{resultado.imagen}}" width="90px"
+                                                  height="40px"/>
+  </li>
+</ul>
+
