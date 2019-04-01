@@ -14,16 +14,19 @@ export class ListLibroComponent implements OnInit {
   constructor(
     private librosService: LibrosService
   ) { }
-  librosResponse;
+  librosResponse = null;
   libros;
+  cargandoOculto = true;
   ngOnInit() {
     this.libros = [];
     this.actualiza();
   }
   actualiza() {
     console.log("actualiza");
+    this.cargandoOculto = false;
     this.librosResponse = this.librosService.getData();
     this.librosResponse.subscribe((data) => {
+      this.cargandoOculto = true;
       this.libros = data.libros;
       // console.log(this.libros);
     });

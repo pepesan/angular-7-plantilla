@@ -2,8 +2,16 @@
 <p>
   <button (click)="actualiza()">Actualizar</button>
 </p>
+<h4 [hidden]="cargandoOculto==true">Cargando</h4>
+<h4 *ngIf="cargandoOculto==true && librosResponse!=null && libros.length==0">No hay libros</h4>
 <ul>
   <li *ngFor="let resultado of libros">
+    {{resultado.titulo}}: {{resultado.autor}} {{resultado.isbn}}
+    <button (click)="borra(resultado._id)">Borra</button>
+  </li>
+</ul>
+<ul>
+  <li *ngFor="let resultado of librosResponse.libros | async">
     {{resultado.titulo}}: {{resultado.autor}} {{resultado.isbn}}
     <button (click)="borra(resultado._id)">Borra</button>
   </li>
