@@ -14,13 +14,15 @@ import {TodoService} from './services/todo.service';
 // import {LibrosService} from './services/libros.service';
 import {LibrosService} from './services/libros-api.service';
 import { ListLibroComponent } from './components/list-libro/list-libro.component';
+import { FormularioComponent } from './components/formulario/formulario.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     TodosComponent,
-    ListLibroComponent
+    ListLibroComponent,
+    FormularioComponent
   ],
   imports: [
     BrowserModule,
