@@ -34,6 +34,7 @@ export class FormularioComponent implements OnInit {
       this.model.alterEgo);
     this.heroes.push(heroe);
     this.model = new Hero(0, '', this.powers[0], '');
+    event.target.reset();
   }
 
 }
